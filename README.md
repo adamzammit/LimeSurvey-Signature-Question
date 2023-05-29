@@ -13,6 +13,14 @@ First version is Compatible with LimeSurvey version 3.x
 <img src="{SIGNATUREQUESTION}"/>
 `
 
+##Demonstration video
+
+<figure class="video_container">
+  <video controls="true" allowfullscreen="true">
+    <source src="https://raw.githubusercontent.com/adamzammit/LimeSurvey-Signature-Question/master/limesurvey-signature-question-usage.webm" type="video/webm">
+  </video>
+</figure>
+
 ##Details
 Author: Adam Zammit <adam.zammit@acspri.org.au>
 Repo: https://www.github.com/adamzammit/LimeSurvey-Signature-Question
