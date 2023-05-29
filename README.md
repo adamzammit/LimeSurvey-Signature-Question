@@ -9,17 +9,14 @@ First version is Compatible with LimeSurvey version 3.x
 2. Create a new "Short free style" text question and change the "Question theme" to "signature". The question code can be anything, but for this example, use: SIGNATUREQUESTION
 3. A signature element will now display instead of a text box for entry.
 4. You can display the signature in a subsequent question as an image by the following HTML/Expression Manager code:
-`
+```
 <img src="{SIGNATUREQUESTION}"/>
-`
+```
 
 ##Demonstration video
 
-<figure class="video_container">
-  <video controls="true" allowfullscreen="true">
-    <source src="https://raw.githubusercontent.com/adamzammit/LimeSurvey-Signature-Question/master/limesurvey-signature-question-usage.webm" type="video/webm">
-  </video>
-</figure>
+[limesurvey-signature-plugin-2023-05-29_16.11.48.webm](https://github.com/adamzammit/LimeSurvey-Signature-Question/assets/1452303/f69d1f9f-6037-458c-8da7-295814ad9efd)
+
 
 ##Details
 Author: Adam Zammit <adam.zammit@acspri.org.au>
