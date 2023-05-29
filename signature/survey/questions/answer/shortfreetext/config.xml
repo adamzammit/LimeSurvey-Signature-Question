@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+    Ask for a signature and store as base64 in database
+-->
+
+<config>
+    <!-- Those metadata will be displayed in the template configuration page. They are not used for now. -->
+    <metadata>
+        <name>signature</name>
+        <creationDate>2023-05-29</creationDate>
+        <author>Adam Zammit</author>
+        <authorEmail>adam.zammit@acspri.org.au</authorEmail>
+        <authorUrl>https://www.acspri.org.au</authorUrl>
+        <copyright>Copyright (C) 2023 Australian Consortium for Social and Political Research Incorporated (ACSPRI)</copyright>
+        <license>GNU General Public License version 2 or later</license>
+        <version>1.0</version>
+        <apiVersion>1</apiVersion>
+        <description>Collect a signature from the respondent and save as base64</description>
+    </metadata>
+
+    <!--
+        Here the list of the css/js files to load.
+        Any file here will be loaded via the asset manager (when in config.php debug = 0)
+    -->
+    <files>
+        <css>
+            <filename>css/signature.css</filename>
+        </css>
+        <js>
+            <filename>scripts/signature_pad.umd.min.js</filename>
+        </js>
+    </files>
+
+    <!-- Here datas about how LimeSurvey should load the core js/css of the question -->
+    <engine>
+        <load_core_css>true</load_core_css>
+        <load_core_js>true</load_core_js>
+        <show_as_template>true</show_as_template>
+        <show_as_question_type>true</show_as_question_type>
+    </engine>
+</config>

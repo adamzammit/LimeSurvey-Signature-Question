@@ -1,0 +1,77 @@
+{#
+/*
+ * Shortfreetext, signature pad question subtype
+ *
+ * $extraclass
+ * $name        $ia[1]
+ * $prefix
+ * $suffix
+ * $kpclass
+ * $tiwidth
+ * $dispVal
+ * $maxlength
+ * $checkconditionFunction
+ */
+#}
+
+<!-- answer -->
+{% if withColumn %}
+<div class='{{ coreClass }} row'>
+    <div class="{{ extraclass }}">
+{% else %}
+<div class='{{ coreClass }} {{ extraclass }}'>
+{% endif %}
+    {% if prefix != '' or suffix != '' %}
+        <div class="ls-input-group">
+    {% endif %}
+        <!-- Prefix -->
+        {% if prefix != '' %}
+            <div class='ls-input-group-extra prefix-text prefix'>{{ prefix }}</div>
+        {% endif %}
+
+        <!-- Input -->
+        <input
+            class="hidden form-control {{ kpclass }}"
+            type="text"
+            name="{{ name }}"
+            id="answer{{ name }}"
+            value="{{ dispVal }}"
+            {% if inputsize %}size="{{ inputsize }}" {% endif %}
+            {% if maxlength %}maxlength="{{ maxlength }}" {% endif %}
+            aria-labelledby="ls-question-text-{{ basename }}"
+        />
+
+        <canvas id="signature-pad{{ name }}" class="signature-pad" width=400 height=200></canvas>
+        <div class="btn btn-sm btn-default" id="signature-pad-clear{{ name }}">Clear</div>
+        <!-- Suffix -->
+        {% if suffix != '' %}
+            <div class='ls-input-group-extra suffix-text suffix'>{{ suffix }}</div>
+        {% endif %}
+    {% if prefix != '' or suffix != '' %}
+        </div>
+    {% endif %}
+{% if withColumn %}
+    </div>
+</div>
+
+{% else %}
+</div>
+{% endif %}
+{{ registerScript( "SignatureQuestion" ~ name, "
+    const canvas = document.getElementById('signature-pad" ~ name ~ "');
+    const clearButton = document.getElementById('signature-pad-clear" ~ name ~ "');
+    const signaturePad = new SignaturePad(canvas);
+    
+    signaturePad.addEventListener('endStroke', () => {
+      $('#answer" ~ name ~ "').val(signaturePad.toDataURL());
+    });
+    
+    clearButton.addEventListener('click', function (event) {
+     signaturePad.clear();
+     $('#answer" ~ name ~ "').val(signaturePad.toDataURL());
+    });
+
+    signaturePad.fromDataURL($('#answer" ~ name ~ "').val());
+    ", "POS_POSTSCRIPT")
+}}
+<!-- end of answer -->
