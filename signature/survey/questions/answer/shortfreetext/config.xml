@@ -7,16 +7,29 @@
     <!-- Those metadata will be displayed in the template configuration page. They are not used for now. -->
     <metadata>
         <name>signature</name>
+        <type>question_theme</type>
+        <title>Signature Pad</title>
         <creationDate>2023-05-29</creationDate>
+        <lastUpdate>2023-05-29</lastUpdate>
         <author>Adam Zammit</author>
+        <authorUrl>https://www.acspri.org.au/</authorUrl>
         <authorEmail>adam.zammit@acspri.org.au</authorEmail>
-        <authorUrl>https://www.acspri.org.au</authorUrl>
         <copyright>Copyright (C) 2023 Australian Consortium for Social and Political Research Incorporated (ACSPRI)</copyright>
         <license>GNU General Public License version 2 or later</license>
         <version>1.0</version>
         <apiVersion>1</apiVersion>
+        <lastSecurityUpdate>1.0</lastSecurityUpdate>
+        <questionType>S</questionType>
+        <group>Text questions</group>
         <description>Collect a signature from the respondent and save as base64</description>
     </metadata>
+
+    <compatibility>
+        <version>3.0</version>
+        <version>4.0</version>
+        <version>5.0</version>
+        <version>6.0</version>
+    </compatibility>
 
     <!--
         Here the list of the css/js files to load.
@@ -29,7 +42,25 @@
         <js>
             <filename>scripts/signature_pad.umd.min.js</filename>
         </js>
+        <preview>
+            <filename>images/signature.png</filename>
+        </preview>
     </files>
+
+    <attributes>
+		<!-- Hide some core attributes -->
+		<attribute>
+			<name>prefix</name>
+			<category>Display</category>
+			<inputtype/>
+		</attribute>
+		<attribute>
+			<name>display_rows</name>
+			<category>Display</category>
+			<inputtype/>
+		</attribute>
+	</attributes>
+
 
     <!-- Here datas about how LimeSurvey should load the core js/css of the question -->
     <engine>

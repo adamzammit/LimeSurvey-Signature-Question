@@ -1,7 +1,7 @@
 # Signature pad question type for LimeSurvey
 A LimeSurvey question theme that uses the [signature_pad](https://github.com/szimek/signature_pad) js library (MIT Licence) to allow for the display of a signature pad as a variation of the LimeSurvey short-free-text type question, and to store the signature as PNG [Data URI](http://en.wikipedia.org/wiki/Data_URI_scheme)
 
-First version is Compatible with LimeSurvey version 3.x
+Compatible with LimeSurvey versions 3.x,4.x,5.x,6.x
 
 ## Installation and Usage
 
