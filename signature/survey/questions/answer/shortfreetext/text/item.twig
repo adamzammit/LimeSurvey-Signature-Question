@@ -60,7 +60,12 @@
 {{ registerScript( "SignatureQuestion" ~ name, "
     const canvas = document.getElementById('signature-pad" ~ name ~ "');
     const clearButton = document.getElementById('signature-pad-clear" ~ name ~ "');
-    const signaturePad = new SignaturePad(canvas);
+    const signaturePad = new SignaturePad(canvas, {
+      penColor: '" ~ question_template_attribute.pen_colour ~ "',
+      backgroundColor: '" ~ question_template_attribute.background_colour ~ "',
+      minWidth: '" ~ question_template_attribute.min_width ~ "',
+      maxWidth: '" ~ question_template_attribute.max_width ~ "'
+    });
     
     signaturePad.addEventListener('endStroke', () => {
       $('#answer" ~ name ~ "').val(signaturePad.toDataURL());

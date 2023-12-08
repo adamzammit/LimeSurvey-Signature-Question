@@ -16,9 +16,9 @@
         <authorEmail>adam.zammit@acspri.org.au</authorEmail>
         <copyright>Copyright (C) 2023 Australian Consortium for Social and Political Research Incorporated (ACSPRI)</copyright>
         <license>GNU General Public License version 2 or later</license>
-        <version>1.0</version>
+        <version>1.0.2</version>
         <apiVersion>1</apiVersion>
-        <lastSecurityUpdate>1.0</lastSecurityUpdate>
+        <lastSecurityUpdate>1.0.2</lastSecurityUpdate>
         <questionType>S</questionType>
         <group>Text questions</group>
         <description>Collect a signature from the respondent and save as base64</description>
@@ -59,8 +59,42 @@
 			<category>Display</category>
 			<inputtype/>
 		</attribute>
-	</attributes>
+    </attributes>
 
+    <custom_attributes>
+        <attribute>
+            <name>pen_colour</name>
+            <category>Display</category>
+            <inputtype>text</inputtype>
+            <default>black</default>
+            <help>Choose the colour of the pen in CSS notation such as : rgb(66, 133, 244) or black</help>
+            <caption>Pen colour: </caption>
+        </attribute>
+        <attribute>
+            <name>background_colour</name>
+            <category>Display</category>
+            <inputtype>text</inputtype>
+            <default>rgba(0,0,0,0)</default>
+            <help>Choose the colour of the background in CSS notation such as : rgba(0,0,0,0) for transparent or white</help>
+            <caption>Background colour: </caption>
+        </attribute>
+        <attribute>
+            <name>min_width</name>
+            <category>Display</category>
+            <inputtype>text</inputtype>
+            <default>0.5</default>
+            <help>Choose the width of the line</help>
+            <caption>Signature line minimum width: </caption>
+        </attribute>
+        <attribute>
+            <name>max_width</name>
+            <category>Display</category>
+            <inputtype>text</inputtype>
+            <default>2.5</default>
+            <help>Choose the maximum width of the line</help>
+            <caption>Signature line maxiumum width: </caption>
+        </attribute>
+    </custom_attributes>
 
     <!-- Here datas about how LimeSurvey should load the core js/css of the question -->
     <engine>
