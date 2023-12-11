@@ -41,7 +41,7 @@
             aria-labelledby="ls-question-text-{{ basename }}"
         />
 
-        <canvas id="signature-pad{{ name }}" class="signature-pad" width=400 height=200></canvas>
+        <canvas id="signature-pad{{ name }}" class="signature-pad" width="{{ question_template_attribute.box_width }}" height="{{ question_template_attribute.box_height }}"></canvas>
         <div class="btn btn-sm btn-default" id="signature-pad-clear{{ name }}">Clear</div>
         <!-- Suffix -->
         {% if suffix != '' %}

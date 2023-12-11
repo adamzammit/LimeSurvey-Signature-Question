@@ -10,15 +10,15 @@
         <type>question_theme</type>
         <title>Signature Pad</title>
         <creationDate>2023-05-29</creationDate>
-        <lastUpdate>2023-05-29</lastUpdate>
+        <lastUpdate>2023-12-11</lastUpdate>
         <author>Adam Zammit</author>
         <authorUrl>https://www.acspri.org.au/</authorUrl>
         <authorEmail>adam.zammit@acspri.org.au</authorEmail>
         <copyright>Copyright (C) 2023 Australian Consortium for Social and Political Research Incorporated (ACSPRI)</copyright>
         <license>GNU General Public License version 2 or later</license>
-        <version>1.0.2</version>
+        <version>1.0.3</version>
         <apiVersion>1</apiVersion>
-        <lastSecurityUpdate>1.0.2</lastSecurityUpdate>
+        <lastSecurityUpdate>1.0.3</lastSecurityUpdate>
         <questionType>S</questionType>
         <group>Text questions</group>
         <description>Collect a signature from the respondent and save as base64</description>
@@ -47,52 +47,86 @@
         </preview>
     </files>
 
-    <attributes>
-		<!-- Hide some core attributes -->
-		<attribute>
-			<name>prefix</name>
-			<category>Display</category>
-			<inputtype/>
-		</attribute>
-		<attribute>
-			<name>display_rows</name>
-			<category>Display</category>
-			<inputtype/>
-		</attribute>
-    </attributes>
-
     <custom_attributes>
+        <!-- Hide some core attributes -->
+        <attribute>
+            <name>prefix</name>
+            <category>Display</category>
+            <inputtype/>
+        </attribute>
+        <attribute>
+            <name>display_rows</name>
+            <category>Display</category>
+            <inputtype/>
+        </attribute>
+        <attribute>
+            <name>text_input_width</name>
+            <category>Display</category>
+            <inputtype/>
+        </attribute>
+        <attribute>
+            <name>input_size</name>
+            <category>Display</category>
+            <inputtype/>
+        </attribute>
+        <attribute>
+            <name>maximum_chars</name>
+            <category>Input</category>
+            <inputtype/>
+        </attribute>
         <attribute>
             <name>pen_colour</name>
             <category>Display</category>
             <inputtype>text</inputtype>
             <default>black</default>
-            <help>Choose the colour of the pen in CSS notation such as : rgb(66, 133, 244) or black</help>
+            <help>Choose the colour of the pen in CSS notation such as : rgb(66, 133, 244) or black (default)</help>
             <caption>Pen colour: </caption>
+            <sortorder>3</sortorder>
         </attribute>
         <attribute>
             <name>background_colour</name>
             <category>Display</category>
             <inputtype>text</inputtype>
             <default>rgba(0,0,0,0)</default>
-            <help>Choose the colour of the background in CSS notation such as : rgba(0,0,0,0) for transparent or white</help>
+            <help>Choose the colour of the background in CSS notation such as : rgba(0,0,0,0) (default) for transparent or white</help>
             <caption>Background colour: </caption>
+            <sortorder>4</sortorder>
         </attribute>
         <attribute>
             <name>min_width</name>
             <category>Display</category>
             <inputtype>text</inputtype>
             <default>0.5</default>
-            <help>Choose the width of the line</help>
+            <help>Choose the width of the line (default 0.5)</help>
             <caption>Signature line minimum width: </caption>
+            <sortorder>5</sortorder>
         </attribute>
         <attribute>
             <name>max_width</name>
             <category>Display</category>
             <inputtype>text</inputtype>
             <default>2.5</default>
-            <help>Choose the maximum width of the line</help>
+            <help>Choose the maximum width of the line (default 2.5)</help>
             <caption>Signature line maxiumum width: </caption>
+            <sortorder>6</sortorder>
+        </attribute>
+        <attribute>
+            <name>box_width</name>
+            <category>Display</category>
+            <inputtype>text</inputtype>
+            <default>350</default>
+            <help>Choose the width of the signature box. Default is 350</help>
+            <caption>Signature box width: </caption>
+            <sortorder>1</sortorder>
+        </attribute>
+        <attribute>
+            <name>box_height</name>
+            <category>Display</category>
+            <inputtype>text</inputtype>
+            <default>200</default>
+            <help>Choose the height of the signature box. Default is 200</help>
+            <caption>Signature box height: </caption>
+            <sortorder>2</sortorder>
         </attribute>
     </custom_attributes>
 
