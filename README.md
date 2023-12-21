@@ -6,7 +6,7 @@ Compatible with LimeSurvey versions 3.x,4.x,5.x,6.x
 
 ## Installation and Usage (LimeSurvey 6.x)
 
-1. Download the latest release
+1. Download the latest release (ensure you download the latest release ZIP file, not the "Source code" ZIP file)
 2. Visit the "Configuration" -> "Themes" -> "Question theme" in the LimeSurvey GUI
 3. Click on "Upload and Install" and browse to the latest release download, and click on "Upload".
 4. Create a new question and choose the "Signature Pad" type (under "Text questions") - (note due to a LimeSurvey bug, the preview of short free text question will appear instead)
@@ -18,10 +18,11 @@ Compatible with LimeSurvey versions 3.x,4.x,5.x,6.x
 
 ## Installation and Usage (LimeSurvey 3.x, 5.x)
 
-1. Extract the files and place the signature folder in the upload/themes/question folder of LimeSurvey
-2. Create a new "Short free style" text question and change the "Question theme" to "signature". The question code can be anything, but for this example, use: signature
-3. A signature element will now display instead of a text box for entry.
-4. You can display the signature in a subsequent question as an image by the following HTML/Expression Manager code:
+1. Download the latest release (ensure you download the latest release ZIP file, not the "Source code" ZIP file)
+2. Extract the files and place the signature folder in the upload/themes/question folder of LimeSurvey
+3. Create a new "Short free style" text question and change the "Question theme" to "signature". The question code can be anything, but for this example, use: signature
+4. A signature element will now display instead of a text box for entry.
+5. You can display the signature in a subsequent question as an image by the following HTML/Expression Manager code:
 ```
 <img src="{signature}"/>
 ```
