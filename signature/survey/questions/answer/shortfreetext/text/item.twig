@@ -57,14 +57,16 @@
 {% else %}
 </div>
 {% endif %}
+{# json_encode(15) = JSON_HEX_TAG|JSON_HEX_AMP|JSON_HEX_APOS|JSON_HEX_QUOT: safely embeds these free-text
+   theme attributes inside the inline <script> below, since they are not otherwise escaped for JS/HTML context #}
 {{ registerScript( "SignatureQuestion" ~ name, "
     const canvas = document.getElementById('signature-pad" ~ name ~ "');
     const clearButton = document.getElementById('signature-pad-clear" ~ name ~ "');
     const signaturePad = new SignaturePad(canvas, {
-      penColor: '" ~ question_template_attribute.pen_colour ~ "',
-      backgroundColor: '" ~ question_template_attribute.background_colour ~ "',
-      minWidth: '" ~ question_template_attribute.min_width ~ "',
-      maxWidth: '" ~ question_template_attribute.max_width ~ "'
+      penColor: " ~ question_template_attribute.pen_colour|json_encode(15) ~ ",
+      backgroundColor: " ~ question_template_attribute.background_colour|json_encode(15) ~ ",
+      minWidth: " ~ question_template_attribute.min_width|json_encode(15) ~ ",
+      maxWidth: " ~ question_template_attribute.max_width|json_encode(15) ~ "
     });
     
     signaturePad.addEventListener('endStroke', () => {
